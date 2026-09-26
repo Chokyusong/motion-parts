@@ -105,7 +105,7 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 
 /* 크게 보기 */
 .modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 30px; background: rgba(4,6,10,.8); backdrop-filter: blur(6px); }
-.sheet { width: min(1120px, 94vw); border-radius: 18px; overflow: hidden; background: var(--panel); border: 1px solid var(--line2);
+.sheet { width: min(1120px, 100%); border-radius: 18px; overflow: hidden; background: var(--panel); border: 1px solid var(--line2);
   box-shadow: 0 40px 100px rgba(0,0,0,.6); }
 .sheet video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 .sheet-body { padding: 20px 24px 22px; display: grid; gap: 10px; }
@@ -118,6 +118,8 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
   background: #1d2433; border: 1px solid var(--line2); box-shadow: 0 10px 30px rgba(0,0,0,.5); }
 .toast.bad { border-color: rgba(248,113,113,.6); color: #ffd0d0; }
 @media (max-width: 720px) {
+  .modal { padding: 12px; }
+  .sheet-body { padding: 16px 16px 18px; }
   .top { padding: 0 16px; gap: 10px; }
   .hero { padding: 28px 16px 10px; } .hero h1 { font-size: 26px; } .hero p { font-size: 14px; }
   .search { min-width: 0; width: 100%; margin-left: 0; }
