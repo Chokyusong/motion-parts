@@ -1,0 +1,60 @@
+{
+  "categories": [
+    { "id": "text", "name": "글자", "desc": "문장·단어를 보여 주는 기본 글자 효과" },
+    { "id": "type", "name": "타이포 효과", "desc": "글자에 특별한 느낌을 더하는 효과" },
+    { "id": "graphic", "name": "그래픽·정보", "desc": "로고·장식·그래프 같은 그림 효과" },
+    { "id": "stream", "name": "방송 화면", "desc": "라이브 방송 느낌의 화면 요소" },
+    { "id": "transition", "name": "장면 전환", "desc": "두 장면 사이에 넣는 넘김 효과" },
+    { "id": "3d", "name": "3D", "desc": "입체·빛·공간 효과(three.js · Blender)" },
+    { "id": "bg", "name": "배경·마감", "desc": "영상 전체의 바탕과 마무리" }
+  ],
+  "parts": [
+    { "id": "slam", "cat": "text", "name": "큰 글자 꽂기", "dur": 3, "desc": "단어가 크게 날아와 박자에 맞춰 쾅 꽂힙니다.", "when": "광고 첫 장면, 강조하고 싶은 한 단어" },
+    { "id": "lineRise", "cat": "text", "name": "줄마다 올라오기", "dur": 4, "desc": "문장이 한 줄씩 아래에서 부드럽게 올라옵니다.", "when": "메시지·슬로건을 차분하고 고급스럽게" },
+    { "id": "charCascade", "cat": "text", "name": "한 글자씩", "dur": 4, "desc": "글자가 하나씩 뒤집히며 살아납니다.", "when": "제목, 이름, 브랜드명" },
+    { "id": "marquee", "cat": "text", "name": "흐르는 줄글", "dur": 4, "desc": "화면 가득 글자 줄이 흐르며 점점 빨라집니다.", "when": "분위기를 끌어올리는 빌드업 구간" },
+    { "id": "caption", "cat": "text", "name": "설명 줄", "dur": 3, "desc": "작은 영문 제목 + 선 + 설명 한 줄.", "when": "장면 소제목, 짧은 설명" },
+    { "id": "counter", "cat": "text", "name": "숫자 올라가기", "dur": 3.5, "desc": "숫자가 빠르게 올라가다 톡 멈춥니다.", "when": "실적·수치 강조(실제 숫자만 넣기)" },
+
+    { "id": "glitchText", "cat": "type", "name": "글리치", "dur": 3, "desc": "색이 갈라지고 조각이 밀리며 디지털하게 나타납니다.", "when": "IT·게임·사이버 느낌" },
+    { "id": "scrambleText", "cat": "type", "name": "해독", "dur": 3.5, "desc": "무작위 글자가 돌다가 왼쪽부터 제 글자로 맞춰집니다.", "when": "기술·보안·데이터 소개" },
+    { "id": "typewriter", "cat": "type", "name": "타자기", "dur": 4, "desc": "한 글자씩 타자 치듯 나타나고 커서가 깜빡입니다.", "when": "개발·코딩·대화 느낌" },
+    { "id": "outlineFill", "cat": "type", "name": "외곽선 채움", "dur": 3.5, "desc": "외곽선만 있던 글자에 색이 차오르고 빛이 스칩니다.", "when": "타이틀, 브랜드 한 단어" },
+    { "id": "highlight", "cat": "type", "name": "형광펜 강조", "dur": 3.5, "desc": "문장 속 중요한 단어 뒤에 형광펜 띠가 그어집니다.", "when": "설명 영상, 핵심 단어 강조" },
+    { "id": "splitSlide", "cat": "type", "name": "반쪽 맞물림", "dur": 3, "desc": "글자 위·아래 반쪽이 반대쪽에서 밀려와 딱 맞물립니다.", "when": "강렬한 한 단어, 전환 직후" },
+    { "id": "kineticStack", "cat": "type", "name": "포스터 글자", "dur": 3.5, "desc": "여러 줄을 같은 폭으로 꽉 채운 포스터 글자가 번갈아 밀려옵니다.", "when": "영문 슬로건, 힙한 광고" },
+
+    { "id": "lineDraw", "cat": "graphic", "name": "로고 선 그리기", "dur": 4, "desc": "로고가 펜으로 그리듯 선으로 그려진 뒤 빛나며 채워집니다.", "when": "로고 등장, 영상 끝 마무리" },
+    { "id": "shapeBurst", "cat": "graphic", "name": "터지는 장식", "dur": 3, "desc": "고리·빛살·점이 사방으로 터집니다.", "when": "박자 강조, 글자 등장에 곁들이기" },
+    { "id": "ringPulse", "cat": "graphic", "name": "퍼지는 고리", "dur": 3.5, "desc": "동심원이 박자마다 퍼져 나갑니다.", "when": "신호·연결·LIVE 느낌" },
+    { "id": "morphBlob", "cat": "graphic", "name": "액체 덩어리", "dur": 4, "desc": "광택 있는 액체 덩어리가 살아 있듯 출렁입니다.", "when": "세련된 배경 장식, 글자 뒤" },
+    { "id": "dataBars", "cat": "graphic", "name": "막대그래프", "dur": 4, "desc": "막대가 차례로 자라고 값이 올라갑니다.", "when": "비교·성장 보여 주기(실제 자료만)" },
+    { "id": "progressRing", "cat": "graphic", "name": "원형 진행", "dur": 3.5, "desc": "원이 차오르고 가운데 숫자가 올라갑니다.", "when": "달성률·진행 상황" },
+    { "id": "countdown", "cat": "graphic", "name": "카운트다운", "dur": 4.5, "desc": "3 · 2 · 1 → 시작 글자가 고리와 함께 나옵니다.", "when": "오픈·이벤트 시작" },
+
+    { "id": "lowerThird", "cat": "stream", "name": "자막 이름표", "dur": 3.5, "desc": "화면 아래에 이름과 설명이 방송 자막처럼 나옵니다.", "when": "인터뷰·출연자 소개" },
+    { "id": "chatStream", "cat": "stream", "name": "채팅 흐름", "dur": 4.5, "desc": "채팅이 아래에서 하나씩 올라옵니다.", "when": "라이브 방송 분위기" },
+    { "id": "alertPop", "cat": "stream", "name": "후원 알림", "dur": 3.5, "desc": "알림 카드가 색종이와 함께 튀어나옵니다.", "when": "후원·구독·이벤트 알림" },
+
+    { "id": "whipPan", "cat": "transition", "name": "휙 넘기기", "dur": 2.5, "transition": true, "desc": "화면이 옆으로 휙 넘어가며 다음 장면으로(흐림 포함).", "when": "빠른 장면 전환" },
+    { "id": "zoomPunch", "cat": "transition", "name": "줌 펀치", "dur": 2.5, "transition": true, "desc": "화면이 확 빨려 들어가고 다음 장면이 달려옵니다.", "when": "드롭·강조 직전" },
+    { "id": "irisWipe", "cat": "transition", "name": "원 열기", "dur": 2.5, "transition": true, "poster": 1.05, "desc": "원이 덮었다가 가운데부터 열리며 바뀝니다.", "when": "부드러운 장면 바꿈" },
+    { "id": "slashWipe", "cat": "transition", "name": "비스듬한 띠", "dur": 2.5, "transition": true, "desc": "색 띠 세 겹이 비스듬히 가로지르며 바뀝니다.", "when": "경쾌한 광고·쇼츠" },
+    { "id": "wipe", "cat": "transition", "name": "색 띠 덮기", "dur": 2.5, "transition": true, "poster": 0.88, "desc": "색 띠가 아래에서 덮었다가 위로 걷힙니다.", "when": "장면 구분이 뚜렷해야 할 때" },
+
+    { "id": "logo3D", "cat": "3d", "name": "3D 로고", "dur": 4.5, "desc": "로고가 두께 있는 판 + 크롬 관으로 입체가 되어 돌며 날아옵니다.", "when": "로고 등장(영상 처음·끝)" },
+    { "id": "particleShape", "cat": "3d", "name": "입자 로고", "dur": 5, "desc": "빛 알갱이 수천 개가 소용돌이치며 로고 모양으로 모입니다.", "when": "화려한 로고 등장" },
+    { "id": "imageOrbit", "cat": "3d", "name": "3D 아이콘 궤도", "dur": 5, "desc": "아이콘들이 고리로 돌다 빨려 들고 팡 터집니다.", "when": "기능·서비스 여러 개 소개" },
+    { "id": "warp", "cat": "3d", "name": "워프 터널", "dur": 3.5, "desc": "빛줄기 터널을 빠르게 통과해 번쩍 빠져나갑니다.", "when": "오프닝, 큰 전환" },
+    { "id": "blobSphere", "cat": "3d", "name": "액체 구", "dur": 4, "desc": "무지갯빛 액체 구가 출렁입니다.", "when": "AI·기술·미래 느낌" },
+    { "id": "waveField", "cat": "3d", "name": "물결 지형", "dur": 4, "desc": "빛 점으로 된 물결 위를 낮게 날아갑니다.", "when": "기술 배경, 오프닝" },
+    { "id": "dotGlobe", "cat": "3d", "name": "점 지구", "dur": 4.5, "desc": "점으로 된 지구에 빛나는 연결선이 그려집니다.", "when": "연결·확장·글로벌" },
+    { "id": "ringTunnel", "cat": "3d", "name": "네온 터널", "dur": 3.5, "desc": "네온 고리 터널을 박자에 맞춰 통과합니다.", "when": "드롭, 에너지 넘치는 구간" },
+    { "id": "cardFloat", "cat": "3d", "name": "화면 카드", "dur": 4.5, "desc": "화면(앱·사진) 카드가 날아와 3D로 줄 섭니다.", "when": "제품·작업물 소개" },
+    { "id": "imageSequence", "cat": "3d", "name": "Blender 유리 로고", "dur": 4.5, "desc": "Blender로 만든 유리·크롬 로고가 돌며 다가옵니다(실제 빛 계산).", "when": "가장 고급스러운 로고 장면" },
+
+    { "id": "glowBg", "cat": "bg", "name": "빛 번짐 배경", "dur": 3, "desc": "빛이 천천히 떠다니는 바탕(새 영상에 기본으로 들어감).", "when": "모든 영상의 바탕" },
+    { "id": "rays", "cat": "bg", "name": "빛줄기", "dur": 3, "desc": "도는 빛줄기가 뒤에서 퍼집니다.", "when": "드롭·로고 뒤 강조" },
+    { "id": "finish", "cat": "bg", "name": "마감", "dur": 3, "desc": "필름 결·가장자리 어둡게·끝 페이드(새 영상에 기본으로 들어감).", "when": "모든 영상의 마무리" }
+  ]
+}

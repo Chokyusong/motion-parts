@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>ONICSOFT. Motion — 모션그래픽 부품 도감</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 41가지. 골라 담고 이어서 보세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ONICSOFT. Motion — 모션그래픽 부품 도감">
+<meta property="og:description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 41가지. 골라 담고 이어서 보세요.">
+<meta property="og:image" content="https://chokyusong.github.io/motion-parts/og.jpg">
+<meta property="og:url" content="https://chokyusong.github.io/motion-parts/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>ONICSOFT<i>.</i></b><span>Motion</span></div>
+  <nav class="modes"><a href="index.html">편집기</a><a class="on">부품 도감</a></nav>
+</header>
+
+<section class="hero">
+  <h1>원하는 효과를 고르세요</h1>
+  <p>카드 위에 마우스를 올리면 움직이는 모습이 나옵니다. 마음에 드는 효과를 <b>담기</b>로 모은 뒤
+    <b>새 영상 만들기</b>를 누르면, 고른 순서대로 이어진 영상이 편집기에서 열립니다. 문구·시간·색은 거기서 바꾸면 됩니다.</p>
+  <div class="filters">
+    <div id="tabs" class="tabs" role="tablist"></div>
+    <label class="search"><svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="6"/><path d="m14 14 4 4"/></svg>
+      <input id="q" type="search" placeholder="효과 찾기 (예: 로고, 글자, 전환)"></label>
+  </div>
+</section>
+
+<main id="grid" class="grid"></main>
+
+<aside id="tray" class="tray">
+  <div class="tray-head">
+    <b>내가 고른 순서</b>
+    <span id="trayInfo" class="muted">아직 없음 — 카드의 <em>담기</em>를 눌러 보세요</span>
+  </div>
+  <ol id="picked" class="picked"></ol>
+  <div class="tray-foot">
+    <input id="videoName" type="text" maxlength="40" placeholder="영상 이름 (예: 가게 오픈 광고)">
+    <button id="clearBtn" class="ghost">모두 빼기</button>
+    <button id="makeBtn" class="primary" disabled>새 영상 만들기</button>
+  </div>
+</aside>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet">
+    <video id="mVideo" muted loop playsinline autoplay></video>
+    <div class="sheet-body">
+      <div class="sheet-title"><span id="mCat" class="chip"></span><h2 id="mName"></h2></div>
+      <p id="mDesc"></p>
+      <p class="when"><b>이럴 때</b> <span id="mWhen"></span></p>
+      <div class="sheet-actions">
+        <span id="mDur" class="muted"></span>
+        <button id="mClose" class="ghost">닫기 (Esc)</button>
+        <button id="mPick" class="primary">담기</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script>window.MOTION_STATIC = true;</script>
+<script src="catalog-ui.js"></script>
+</body>
+</html>
