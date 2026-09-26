@@ -101,6 +101,7 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 .tray-foot { display: flex; gap: 10px; align-items: center; }
 .tray-foot input { flex: 1; max-width: 420px; height: 38px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line2); background: #0c0f16; }
 .tray-foot .primary { height: 40px; padding: 0 22px; margin-left: auto; font-size: 15px; }
+.tray-foot select { height: 38px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--line2); background: #0c0f16; color: inherit; font: inherit; }
 
 /* 크게 보기 */
 .modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 30px; background: rgba(4,6,10,.8); backdrop-filter: blur(6px); }

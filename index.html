@@ -5,10 +5,10 @@
 <title>ONICSOFT. Motion — 모션그래픽 부품 도감</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 41가지. 골라 담고 이어서 보세요.">
+<meta name="description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 95가지. 골라 담고 이어서 보세요.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ONICSOFT. Motion — 모션그래픽 부품 도감">
-<meta property="og:description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 41가지. 골라 담고 이어서 보세요.">
+<meta property="og:description" content="코드(HTML·three.js)와 Blender로 만든 모션그래픽 효과 95가지. 골라 담고 이어서 보세요.">
 <meta property="og:image" content="https://chokyusong.github.io/motion-parts/og.jpg">
 <meta property="og:url" content="https://chokyusong.github.io/motion-parts/">
 <meta name="twitter:card" content="summary_large_image">
@@ -45,6 +45,10 @@
   <ol id="picked" class="picked"></ol>
   <div class="tray-foot">
     <input id="videoName" type="text" maxlength="40" placeholder="영상 이름 (예: 가게 오픈 광고)">
+    <select id="videoShape" title="영상 모양">
+      <option value="wide">가로 16:9 (유튜브)</option>
+      <option value="tall">세로 9:16 (쇼츠·릴스)</option>
+    </select>
     <button id="clearBtn" class="ghost">모두 빼기</button>
     <button id="makeBtn" class="primary" disabled>새 영상 만들기</button>
   </div>

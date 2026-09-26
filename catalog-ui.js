@@ -163,7 +163,7 @@ async function make() {
   $("#makeBtn").textContent = "만드는 중…";
   try {
     const res = await fetch("/api/new-video", { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, parts: S.picked }) });
+      body: JSON.stringify({ name, parts: S.picked, shape: $("#videoShape").value }) });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "만들지 못했습니다");
     location.href = "index.html#page=" + encodeURIComponent(data.page);
@@ -232,6 +232,7 @@ function staticMode() {
   // 서버가 없으니 영상 만들기 대신 "이어서 보기", 편집기 링크·이름 칸은 뺀다
   document.querySelectorAll('.modes a[href="index.html"]').forEach(a => a.remove());
   $("#videoName").hidden = true;
+  $("#videoShape").hidden = true;
   $("#makeBtn").textContent = "▶ 이어서 보기";
   const intro = $(".hero p");
   if (intro) intro.innerHTML = "카드 위에 마우스를 올리거나(휴대폰은 눌러서) 움직이는 모습을 보세요. 마음에 드는 효과를 <b>담기</b>로 모은 뒤 " +
