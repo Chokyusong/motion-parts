@@ -12,6 +12,8 @@ const $ = s => document.querySelector(s);
 const STATIC = window.MOTION_STATIC === true;
 const OUT = STATIC ? "clips/" : "/kit/parts/out/";
 const CATALOG = STATIC ? "catalog.json" : "/kit/parts/catalog.json";
+// 공개 사이트는 올릴 때마다 판 번호(build_site.py)를 붙인다 → 예전 파일을 저장해 둔 브라우저도 새 내용을 받는다
+const VER = STATIC && window.MOTION_VERSION ? "?v=" + window.MOTION_VERSION : "";
 const KEY = "motion-catalog-picked";
 const S = { cats: [], parts: [], byId: {}, tab: "all", q: "", picked: [] };
 
@@ -62,7 +64,7 @@ function renderTabs() {
 function card(p) {
   const count = S.picked.filter(id => id === p.id).length;
   const orders = S.picked.map((id, i) => id === p.id ? i + 1 : 0).filter(Boolean);
-  const img = h("img", { src: OUT + p.id + ".jpg", alt: "", loading: "lazy" });
+  const img = h("img", { src: OUT + p.id + ".jpg" + VER, alt: "", loading: "lazy" });
   const none = h("div", { class: "none", hidden: true }, "미리보기 준비 중");
   img.onerror = () => { img.remove(); none.hidden = false; };
   const video = h("video", { muted: true, loop: true, playsinline: true, preload: "none" });
@@ -80,7 +82,7 @@ function card(p) {
   // 마우스를 올리면 그때 영상을 불러 재생(처음부터 전부 불러오면 무겁다)
   el.addEventListener("mouseenter", () => {
     if (!video.src) {
-      video.src = OUT + p.id + ".mp4";
+      video.src = OUT + p.id + ".mp4" + VER;
       video.addEventListener("canplay", () => video.classList.add("ready"), { once: true });
     }
     video.currentTime = 0;
@@ -179,8 +181,8 @@ let modalId = null;
 function openModal(p) {
   modalId = p.id;
   const v = $("#mVideo");
-  v.src = OUT + p.id + ".mp4";
-  v.poster = OUT + p.id + ".jpg";
+  v.src = OUT + p.id + ".mp4" + VER;
+  v.poster = OUT + p.id + ".jpg" + VER;
   v.play().catch(() => {});
   $("#mName").textContent = p.name;
   $("#mCat").textContent = p.transition ? "전환" : catName(p.cat);
@@ -201,8 +203,8 @@ function playAll() {
     if (!playlist) return;
     if (playlist.i >= S.picked.length) playlist.i = 0;          // 끝나면 처음부터 다시
     const p = S.byId[S.picked[playlist.i]];
-    v.src = OUT + p.id + ".mp4";
-    v.poster = OUT + p.id + ".jpg";
+    v.src = OUT + p.id + ".mp4" + VER;
+    v.poster = OUT + p.id + ".jpg" + VER;
     v.play().catch(() => {});
     $("#mName").textContent = `${playlist.i + 1} / ${S.picked.length} · ${p.name}`;
     $("#mCat").textContent = p.transition ? "전환" : catName(p.cat);
@@ -241,7 +243,7 @@ function staticMode() {
 
 async function main() {
   if (STATIC) staticMode();
-  const data = await (await fetch(CATALOG)).json();
+  const data = await (await fetch(CATALOG + VER, { cache: "no-cache" })).json();
   S.cats = data.categories;
   S.parts = data.parts;
   S.byId = Object.fromEntries(S.parts.map(p => [p.id, p]));
